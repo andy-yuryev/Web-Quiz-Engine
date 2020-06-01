@@ -1,6 +1,6 @@
 # Web Quiz Engine
 
-A project based on Java 11 and Spring Boot.
+A simple engine for creating and solving quizzes through REST API.
 
 It uses an embedded H2 database to store all data in the file system.
 
