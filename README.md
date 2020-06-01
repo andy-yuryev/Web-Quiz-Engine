@@ -1,8 +1,6 @@
 # Web Quiz Engine
 
-A simple engine for creating and solving quizzes through REST API.
-
-It's my implementation of JetBrains Academy project - https://hyperskill.org/projects/91?goal=7.
+A project based on Java 11 and Spring Boot.
 
 It uses an embedded H2 database to store all data in the file system.
 
