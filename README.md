@@ -62,7 +62,7 @@ If the quiz does not exist, the server returns `HTTP 404 (Not Found)`.
 
 ---
 
-### Get all quizzes (with paging)
+### Get all quizzes
 
 Obtaining all quizzes is performed page by page: 10 quizzes at once.
 
@@ -89,7 +89,7 @@ If the specified quiz does not exist, the server returns `HTTP 404 (Not Found)`.
 
 ---
 
-### Get all completions of quizzes (with paging)
+### Get all completions of quizzes
 
 The API provides an operation to get all completions of quizzes for a user.
 A response is separated by pages, since the service may return a lot of data.
