@@ -28,8 +28,6 @@ Each quiz has an id, title, text, possible options. Some of the options are corr
 To perform any actions with quizzes a user has to be registered and then authorized via HTTP Basic Auth.
 Otherwise, the service returns the `HTTP 401 (Unauthorized)`.
 
-Examples of all supported requests. 
-
 ---
 
 ### Register a new user
