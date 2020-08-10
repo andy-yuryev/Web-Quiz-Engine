@@ -8,7 +8,7 @@ It uses an embedded H2 database to store all data in the file system.
 
 - Building app
 ```
-./gradlew build
+gradlew build
 ```
 
 - Running app
