@@ -35,7 +35,7 @@ Otherwise, the service returns the `HTTP 401 (Unauthorized)`.
 To register a new user, you need to send a JSON with `email` and `password` via `POST` request.
 
 ```
-curl -X POST -H "Content-Type: application/json" http://localhost:8888/api/register \
+curl -X POST -H "Content-Type: application/json" http://localhost:8889/api/register \
 -d '{"email":"test@gmail.com", "password": "secret"}'
 ```
 
@@ -54,7 +54,7 @@ To create a new quiz, you need to send a JSON via `POST` request with the follow
 - `answer`: an array of indexes of correct options.
 
 ```
-curl --user test@gmail.com:secret -X POST -H "Content-Type: application/json" -d '{"title":"The Java Logo", "text":"What is depicted on the Java logo?", "options": ["Robot", "Tea leaf", "Cup of coffee", "Bug"], "answer": [2]}' http://localhost:8888/api/quizzes
+curl --user test@gmail.com:secret -X POST -H "Content-Type: application/json" -d '{"title":"The Java Logo", "text":"What is depicted on the Java logo?", "options": ["Robot", "Tea leaf", "Cup of coffee", "Bug"], "answer": [2]}' http://localhost:8889/api/quizzes
 ```
 
 The response contains JSON with generated `id`.
@@ -68,7 +68,7 @@ If the request JSON does not contain `title` or `text`, or number of options in 
 To get an info about a quiz, you need to specify its `id` in url.
 
 ```
-curl --user test@gmail.com:secret -X GET http://localhost:8888/api/quizzes/1
+curl --user test@gmail.com:secret -X GET http://localhost:8889/api/quizzes/1
 ```
 
 If the quiz does not exist, the server returns `HTTP 404 (Not Found)`.
@@ -80,7 +80,7 @@ If the quiz does not exist, the server returns `HTTP 404 (Not Found)`.
 Obtaining all quizzes is performed page by page: 10 quizzes at once.
 
 ```
-curl --user test@gmail.com:secret -X GET http://localhost:8888/api/quizzes
+curl --user test@gmail.com:secret -X GET http://localhost:8889/api/quizzes
 ```
 
 The response contains a JSON with quizzes (inside `content`) and some additional metadata.
@@ -99,7 +99,7 @@ In all cases, the status code is `HTTP 200 (OK)`.
 To solve a quiz, you need to pass an answer JSON with key `answer` and options indexes via `POST` request.
 
 ```
-curl --user test@gmail.com:secret -X POST -H 'Content-Type: application/json' http://localhost:8888/api/quizzes/1/solve -d '{"answer": [2]}'
+curl --user test@gmail.com:secret -X POST -H 'Content-Type: application/json' http://localhost:8889/api/quizzes/1/solve -d '{"answer": [2]}'
 ```
 
 It is also possible to send an empty array of options because some quizzes may not have correct options.
@@ -116,7 +116,7 @@ The API provides an operation to get all completions of quizzes for a user.
 A response is separated by pages, since the service may return a lot of data.
 
 ```
-curl --user test@gmail.com:secret -X GET  http://localhost:8888/api/quizzes/completed
+curl --user test@gmail.com:secret -X GET  http://localhost:8889/api/quizzes/completed
 ```
 
 The response contains a JSON with quizzes (inside `content`) and some additional metadata.
@@ -131,7 +131,7 @@ but with different completion date.
 It is possible to delete a quiz, but this can only be done by its creator.
 
 ```
-curl --user test@gmail.com:secret -X DELETE  http://localhost:8888/api/quizzes/1
+curl --user test@gmail.com:secret -X DELETE  http://localhost:8889/api/quizzes/1
 ```
 
 If the operation was successful, the service returns `HTTP 204 (No Content)`.
